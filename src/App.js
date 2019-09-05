@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './App.css';
 import BookList from './BookList';
+import BookForm from './BookForm'
 
 class App extends Component {
 
@@ -8,7 +9,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      books: []
+      books: [],
     }
     this.fetchBooks()
   }
@@ -25,6 +26,9 @@ class App extends Component {
     })
   }
 
+  
+  
+
 
 
 
@@ -37,7 +41,9 @@ class App extends Component {
     return (
       <div>
         <BookList books = {this.state.books} />
+        <BookForm  onSubmit = {this.handleSubmit}/>
       </div>
+      
     )
   }
 }
